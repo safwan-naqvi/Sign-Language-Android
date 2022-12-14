@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SignsLanguageFYP" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.SignsLanguageFYP.NoActionBarAndStatusBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+<!--    materialButtonOutlinedStyle-->
+
+    <style name="ToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/_14sdp</item>
+        <item name="android:paddingRight">@dimen/_14sdp</item>
+        <item name="android:minWidth">@dimen/_36sdp</item>
+        <item name="android:minHeight">@dimen/_36sdp</item>
+        <item name="android:strokeColor">@color/white</item>
+        <item name="android:strokeWidth">@dimen/_1sdp</item>
+        <item name="android:backgroundTint">#1B1919</item>
+        <item name="android:fontFamily">@font/basic_light</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="ToggleButtonTwo" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/_14sdp</item>
+        <item name="android:paddingRight">@dimen/_14sdp</item>
+        <item name="android:minWidth">@dimen/_36sdp</item>
+        <item name="android:minHeight">@dimen/_36sdp</item>
+        <item name="android:strokeColor">@color/white</item>
+        <item name="android:strokeWidth">@dimen/_1sdp</item>
+        <item name="android:backgroundTint">#1B1919</item>
+        <item name="android:fontFamily">@font/basic_light</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+
+</resources>

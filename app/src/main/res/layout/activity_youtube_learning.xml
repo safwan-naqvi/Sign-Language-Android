@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/playBlack"
+    android:paddingBottom="@dimen/_12sdp"
+    tools:context=".Dashboard.YoutubeLearningActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:gravity="center"
+        android:paddingStart="@dimen/_20sdp"
+        android:textAllCaps="true"
+        app:backgroundTint="#C2C7CF"
+        app:icon="@drawable/ic_back_arrow"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconTint="#2a2a2a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_light"
+        android:text="Signs Training Video"
+        android:textColor="@color/matteWhite"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <TextView
+        android:id="@+id/activity_title_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_light"
+        android:text="YOUTUBE VIDEOS"
+        android:textColor="#C9CBCD"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:textSize="@dimen/_8sdp"
+        android:letterSpacing="0.5"
+        app:layout_constraintEnd_toEndOf="@+id/activity_title"
+        app:layout_constraintStart_toStartOf="@+id/activity_title"
+        app:layout_constraintTop_toBottomOf="@+id/activity_title" />
+
+
+    <RelativeLayout
+        android:id="@+id/signs_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280sdp"
+        android:background="@drawable/bottom_round_corners_bg"
+        android:backgroundTint="#27000000"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/video_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/youtube_player_view"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_light"
+            android:text="Video Title"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <TextView
+            android:id="@+id/video_title_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/video_title"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/gotham_light"
+            android:text="Video Title"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:textColor="@color/playWhite"
+            android:textSize="@dimen/_10sdp" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/videos_recycler_view2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:paddingTop="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signs_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

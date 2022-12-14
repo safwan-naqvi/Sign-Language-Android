@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/playBlack"
+    android:orientation="vertical"
+    tools:context=".Dashboard.SignSchoolActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1B1919"
+        android:layout_marginBottom="@dimen/_2sdp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Back to Dashboard"
+            android:fontFamily="@font/basic_light"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:icon="@drawable/ic_baseline_keyboard_backspace_24"
+            android:backgroundTint="#00000000"
+            app:strokeColor="#00000000"
+            app:strokeWidth="0dp"
+            android:layout_marginStart="@dimen/_12sdp"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_prev"
+                style="@style/ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_navigate_before"
+                app:iconTint="@color/white"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_next"
+                style="@style/ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_navigate_next"
+                app:iconTint="@color/white"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nav_reload"
+                style="@style/ToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_refresh"
+                app:iconTint="@color/white"/>
+
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_9sdp"
+        android:progress="20"
+        android:visibility="visible"
+        android:layout_marginTop="-3dp"
+        android:progressTint="#FF9800"
+        android:progressBackgroundTint="#735757"
+        app:layout_constraintBottom_toTopOf="@+id/signs_webview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <WebView
+        android:id="@+id/signs_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/no_internet_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/no_internet_img"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_internet"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/no_internet_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_connection"
+            android:layout_below="@+id/no_internet_img"
+            android:fontFamily="@font/retroica"
+            android:textSize="@dimen/_20sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_internet_title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_25sdp"
+            android:text="Refresh"
+            android:fontFamily="@font/gotham_light"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:backgroundTint="@color/matteBlack"
+            android:paddingBottom="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

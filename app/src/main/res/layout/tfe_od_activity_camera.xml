@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/top_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/change_text_detect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_linear_layout"
+            tools:context=".detectObject.CameraActivity" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="#00000000">
+
+            <!---mageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="" /-->
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_menu_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:elevation="10dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add"
+                style="@style/ToggleButtonTwo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/_100sdp"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                style="@style/ToggleButtonTwo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/_100sdp"
+                android:text="Clear"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back"
+                style="@style/ToggleButtonTwo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/_100sdp"
+                android:text="Back"
+                android:textColor="@color/white" />
+
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    </RelativeLayout>
+
+
+    <!--include
+        android:id="@+id/bottom_sheet_layout"
+        layout="@layout/tfe_od_layout_bottom_sheet" /-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

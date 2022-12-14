@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.signslanguagefyp">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="true" />
+
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/Theme.SignsLanguageFYP">
+
+        <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="false" />
+
+        <uses-native-library
+            android:name="libOpenCL-car.so"
+            android:required="false" />
+
+        <uses-native-library
+            android:name="libOpenCL-pixel.so"
+            android:required="false" />
+
+        <activity
+            android:name=".Dashboard.CombineLetterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".Dashboard.SignSchoolActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".Dashboard.YoutubeVideosListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".Dashboard.YoutubeLearningActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".Dashboard.TextToSignActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Dashboard.EditProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".Dashboard.ProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".Dashboard.DashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SignsLanguageFYP.NoActionBarAndStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".detectObject.DetectorActivity"
+            android:exported="true"
+            android:label="@string/tfe_od_app_name"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

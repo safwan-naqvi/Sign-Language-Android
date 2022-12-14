@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#DFE4E4"
+    tools:context=".Dashboard.TextToSignActivity">
+
+    <RelativeLayout
+        android:id="@+id/wait_anim_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:elevation="5dp"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/signs_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/waiting_anim"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="@dimen/_20sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/waiting" />
+
+        <TextView
+            android:id="@+id/initial_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waiting_anim"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/retroica"
+            android:text="Type to Animate"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/signs_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_375sdp"
+        android:background="@drawable/bottom_round_corners_bg"
+        android:elevation="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/signs_frame"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_centerInParent="true"
+            android:cropToPadding="false" />
+
+        <TextView
+            android:id="@+id/words_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/signs_gif_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_375sdp"
+        android:background="@drawable/bottom_round_corners_bg"
+        android:elevation="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/sign_gif_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:animateLayoutChanges="true"
+            android:layout_centerInParent="true"
+            android:elevation="@dimen/_10sdp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/play_btn_container"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/play_btn_round"
+        android:elevation="@dimen/_4sdp"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/signs_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.08">
+
+        <ImageView
+            android:id="@+id/play_anim_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:src="@drawable/play"
+            app:tint="@color/playWhite" />
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_text_to_convert"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:hint="Please Enter Any Message!"
+        android:pointerIcon="grabbing"
+        app:boxStrokeColor="@color/darkSlate"
+        app:boxStrokeWidth="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_btn_container"
+        app:startIconDrawable="@drawable/ic_note">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coco_regular"
+            android:inputType="text"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:textSize="@dimen/_15sdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/text_anim_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-16dp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:elevation="6dp"
+        android:fontFamily="@font/retroica"
+        android:text="Animation Speed"
+        android:textColor="#248CBC"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/toggle_speed_group"
+        app:layout_constraintEnd_toEndOf="@+id/toggle_speed_group"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/toggle_speed_group" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggle_speed_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/play_btn_container"
+        app:layout_constraintEnd_toStartOf="@+id/play_btn_container"
+        app:layout_constraintTop_toTopOf="@+id/play_btn_container"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/onex"
+            style="@style/ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1x"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/twox"
+            style="@style/ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2x"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fourx"
+            style="@style/ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4x"
+            android:textColor="@color/white" />
+
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <Button
+        android:id="@+id/sign_theatre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_btn_bottom_bg2"
+        android:fontFamily="@font/basic_light"
+        android:letterSpacing="0"
+        android:minWidth="@dimen/_48sdp"
+        android:minHeight="@dimen/_48sdp"
+        android:padding="@dimen/_18sdp"
+        android:text="Message / Sign Theatre"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/words_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/_12sdp"
+        android:padding="@dimen/_8sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/sign_theatre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_speed_group" />
+
+    <TextView
+        android:id="@+id/gif_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-16dp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:elevation="6dp"
+        android:fontFamily="@font/retroica"
+        android:text="SignWithRobert's More Gif? "
+        android:textColor="#8BC34A"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/signs_gif_container"
+        app:layout_constraintEnd_toEndOf="@+id/signs_gif_container"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toStartOf="@+id/signs_gif_container"
+        app:layout_constraintBottom_toBottomOf="@+id/signs_gif_container"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
